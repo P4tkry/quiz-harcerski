@@ -1,4 +1,36 @@
+function getTimeUntilNext10AM() {
+    const now = new Date();
+    let next10AM = new Date();
+    next10AM.setHours(10, 0, 0, 0);
+
+    if (now.getHours() >= 10) {
+        next10AM.setDate(next10AM.getDate() + 1);
+    }
+
+    return Math.floor((next10AM - now) / 1000);
+}
+
+let timeLeft = getTimeUntilNext10AM();
+let timerInterval;
+
+function startTimer() {
+    const timerElement = document.getElementById('timer');
+    timerInterval = setInterval(() => {
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            checkAnswers();
+        } else {
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `Pozostały czas do wybuchu bomby: ${hours}h ${minutes}m ${seconds}s`;
+            timeLeft--;
+        }
+    }, 1000);
+}
+
 function checkAnswers() {
+    clearInterval(timerInterval); // Stop the timer when the quiz is submitted
     let score = 0;
     const resultElement = document.getElementById('result');
 
@@ -24,6 +56,10 @@ function checkAnswers() {
     resultElement.style.color = score >= 8 ? '#00ff00' : '#ff0000';
     resultElement.textContent += score >= 8 ? ' - Świetna robota! - Pierwsze hasło to: informatyka' : ' - Spróbuj ponownie!';
 }
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    startTimer();
+});
 
 document.addEventListener('keydown', function(event) {
     if (event.shiftKey && event.key === 'E') {

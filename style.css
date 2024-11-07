@@ -13,7 +13,12 @@ body {
     align-items: center;
     overflow-y: scroll;
 }
-
+.timer {
+    font-size: 1.2em;
+    margin-top: 10px;
+    text-align: center;
+    color: #ff0000;
+}
 .container {
     max-width: 600px;
     padding: 20px;
