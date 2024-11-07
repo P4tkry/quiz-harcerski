@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Programistyczny</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="title">!!!T3ST!!!</h1>
+
+    <div class="quiz">
+        <div class="question">
+            <p>1. Co to jest wirus komputerowy?</p>
+            <input type="radio" name="q1" value="szkodliwy kod"> Szkodliwy kod<br>
+            <input type="radio" name="q1" value="program zabezpieczający"> Program zabezpieczający<br>
+        </div>
+
+        <div class="question">
+            <p>2. Jaka jest wartość liczby 10 w systemie binarnym?</p>
+            <input type="radio" name="q2" value="2"> 2<br>
+            <input type="radio" name="q2" value="10"> 10<br>
+        </div>
+
+        <div class="question">
+            <p>3. Co oznacza skrót WWW?</p>
+            <input type="radio" name="q3" value="World Wide Web"> World Wide Web<br>
+            <input type="radio" name="q3" value="World War Web"> World War Web<br>
+        </div>
+
+        <div class="question">
+            <p>4. Co to jest algorytm?</p>
+            <input type="radio" name="q4" value="Krok po kroku"> Krok po kroku<br>
+            <input type="radio" name="q4" value="Nazwa programu"> Nazwa programu<br>
+        </div>
+
+        <div class="question">
+            <p>5. Który z tych języków programowania jest używany do stron internetowych?</p>
+            <input type="radio" name="q5" value="JavaScript"> JavaScript<br>
+            <input type="radio" name="q5" value="Python"> Python<br>
+        </div>
+
+        <div class="question">
+            <p>6. Do czego służy debugger?</p>
+            <input type="radio" name="q6" value="Szukanie błędów"> Szukanie błędów<br>
+            <input type="radio" name="q6" value="Tworzenie grafiki"> Tworzenie grafiki<br>
+        </div>
+
+        <div class="question">
+            <p>7. Co to jest program komputerowy?</p>
+            <input type="radio" name="q7" value="Instrukcje"> Zestaw instrukcji<br>
+            <input type="radio" name="q7" value="Plik tekstowy"> Plik tekstowy<br>
+        </div>
+
+        <div class="question">
+            <p>8. Czym jest aplikacja mobilna?</p>
+            <input type="radio" name="q8" value="Program na telefon"> Program na telefon<br>
+            <input type="radio" name="q8" value="Komputer PC"> Program na komputer PC<br>
+        </div>
+
+
+        <button onclick="checkAnswers()">Sprawdź wynik</button>
+    </div>
+
+    <p id="result" class="result"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
